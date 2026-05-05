@@ -1,0 +1,118 @@
+/* FOOTER  */
+
+.foot-desc-txt {
+  margin-top: 22px;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 26px;
+  color: #aaaaaa;
+  max-width: 300px;
+}
+
+.sns-context {
+  margin-top: 20px;
+  width: 130px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.sns-context img {
+  width: 22px;
+  height: 22px;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+  cursor: pointer;
+}
+
+.sns-context img:hover {
+  opacity: 1;
+}
+
+.foot-category-title {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.foot-category-link {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.foot-category-link a {
+  color: #aaaaaa;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.foot-category-link a:hover {
+  color: #ffffff;
+}
+
+.find-us {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.find-us span {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 24px;
+  color: #ffffff;
+  min-width: 16px;
+}
+
+.find-us div {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  color: #aaaaaa;
+}
+
+.copyright-txt {
+  margin-top: 20px;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 34px;
+  color: #666666;
+  text-align: center;
+  justify-content: center;
+}
+
+/* subtle animated underline on category titles */
+.foot-category-title:after {
+  display: block;
+  content: "";
+  border-bottom: solid 1px #ffffff;
+  transform: scaleX(0);
+  transition: transform 250ms ease-in-out;
+  transform-origin: 0% 50%;
+  margin-top: 6px;
+}
+
+.foot-category-title:hover:after {
+  transform: scaleX(1);
+}

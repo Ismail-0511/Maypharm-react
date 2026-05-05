@@ -1,0 +1,321 @@
+/* ══════════════════════════════════════
+   SHARED FIXED NAV BAR
+   A single full-width fixed wrapper lives
+   at the top of the page on every route.
+   MUI Container inside it keeps content
+   centered at ~1300 px.
+══════════════════════════════════════ */
+
+/* The fixed bar wrapper — added around both navbars in TSX */
+.nav-fixed-bar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.06);
+}
+
+/* The inner menu row — full width of Container */
+.nav-fixed-bar .menu {
+  height: 68px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+/* Brand logo */
+.nav-fixed-bar .menu .brand-logo {
+  height: 36px;
+  width: auto;
+  object-fit: contain;
+  transition: opacity 0.2s;
+}
+
+/* Dark logo for light navbar */
+.nav-fixed-bar .brand-logo-dark {
+  filter: none;
+  opacity: 0.88;
+}
+
+/* White logo for transparent navbar over hero */
+
+
+/* Nav links group */
+.nav-fixed-bar .menu .links {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 36px;
+}
+
+/* Individual link */
+.nav-fixed-bar a {
+  text-decoration: none;
+}
+
+.nav-fixed-bar .hover-line a {
+  font-family: "Jost", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #1a2a4a;
+  transition: color 0.22s ease;
+  position: relative;
+}
+
+
+
+.nav-fixed-bar .hover-line a:hover {
+  color: #1a4fad;
+}
+
+
+
+/* Active underline */
+.nav-fixed-bar .underline {
+  color: #1a4fad !important;
+}
+
+
+
+.nav-fixed-bar .hover-line a::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  right: 0;
+  height: 1.5px;
+  background: #1a4fad;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 250ms ease-in-out;
+}
+
+
+
+.nav-fixed-bar .hover-line a:hover::after,
+.nav-fixed-bar .underline::after {
+  transform: scaleX(1);
+}
+
+/* Sign Up button */
+.nav-fixed-bar .signup-btn {
+  background: #1a2a4a !important;
+  color: #ffffff !important;
+  border: 1.5px solid #1a2a4a !important;
+  border-radius: 2px !important;
+  font-family: "Jost", sans-serif !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  letter-spacing: 2px !important;
+  text-transform: uppercase !important;
+  padding: 6px 20px !important;
+  box-shadow: none !important;
+  transition: background 0.22s !important;
+}
+
+.nav-fixed-bar .signup-btn:hover {
+  background: #2a3f6e !important;
+  border-color: #2a3f6e !important;
+}
+
+/* Login button */
+.nav-fixed-bar .login-button {
+  background: transparent !important;
+  color: #1a2a4a !important;
+  border: 1.5px solid rgba(26, 42, 74, 0.4) !important;
+  border-radius: 2px !important;
+  font-family: "Jost", sans-serif !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  letter-spacing: 2px !important;
+  text-transform: uppercase !important;
+  padding: 6px 20px !important;
+  box-shadow: none !important;
+  transition: background 0.22s, border-color 0.22s, color 0.22s !important;
+}
+
+.nav-fixed-bar .login-button:hover {
+  background: rgba(26, 79, 173, 0.06) !important;
+  border-color: #1a4fad !important;
+  color: #1a4fad !important;
+}
+
+/* Login button on transparent dark bg */
+
+
+
+
+/* User avatar */
+.nav-fixed-bar .user-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(26, 42, 74, 0.3);
+  cursor: pointer;
+  object-fit: cover;
+  transition: border-color 0.2s;
+}
+
+
+
+.nav-fixed-bar .user-avatar:hover {
+  border-color: #1a4fad;
+}
+
+/* ══════════════════════════════════════
+   HOME NAVBAR (hero section below bar)
+══════════════════════════════════════ */
+
+
+
+/* ══════════════════════════════════════
+   OTHER NAVBAR (non-hero pages)
+   Just a spacer — the fixed bar handles display
+══════════════════════════════════════ */
+
+.other-navbar {
+  width: 100%;
+  height: 68px; /* spacer so page content isn't hidden behind fixed bar */
+}
+
+/* ══════════════════════════════════════
+   BASKET
+══════════════════════════════════════ */
+
+.basket-frame {
+  position: relative;
+  padding: 10px 4px 0px 4px;
+  width: 450px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  background: #f8f8ff;
+  border-radius: 4px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+}
+
+.basket-frame .all-check-box {
+  padding: 0px 6px;
+  width: 100%;
+  height: 35px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: #1a2a4a;
+  color: #ffffff;
+  border-width: 1px 0px;
+  border-style: solid;
+  border-color: #1a2a4a;
+}
+
+.basket-frame .basket-info-box {
+  position: relative;
+  margin-top: 6px;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.basket-info-box .product-img {
+  width: 60px;
+  height: 60px;
+  filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.15));
+  border-radius: 4px;
+}
+
+.basket-info-box .product-name {
+  margin-left: 11px;
+  width: 185px;
+  font-family: "Jost", sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 22px;
+  color: #1a2a4a;
+}
+
+.basket-info-box .product-price {
+  width: 80px;
+  font-family: "Jost", sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 22px;
+  color: #1a2a4a;
+}
+
+.basket-info-box .css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input {
+  padding: 6.5px 14px;
+}
+
+.basket-info-box .css-ece9u5 {
+  min-width: 72px;
+}
+
+.basket-frame .cancel-btn {
+  position: absolute;
+  top: 33%;
+  right: 2%;
+  cursor: pointer;
+}
+
+.basket-frame .basket-order {
+  margin-top: 10px;
+  width: 100%;
+  height: 64px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.basket-order .price {
+  width: 200px;
+  display: flex;
+  font-family: "Jost", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28px;
+  color: #1a2a4a;
+}
+
+.basket-frame .orders-wrapper {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+}
+
+.basket-frame .orders-wrapper::-webkit-scrollbar {
+  width: 4px;
+}
+
+.basket-frame .orders-wrapper::-webkit-scrollbar-thumb {
+  background-color: #bbb;
+  border-radius: 2px;
+}
+
+.basket-frame .orders-wrapper::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.basket-frame .orders-main-wrapper {
+  position: relative;
+  overflow: hidden;
+  margin-top: 10px;
+  width: 100%;
+  height: 260px;
+  display: flex;
+  flex-direction: column;
+}
