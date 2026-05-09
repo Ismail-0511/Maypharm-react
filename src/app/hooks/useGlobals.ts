@@ -7,6 +7,7 @@ interface GlobalInterface {
     orderBuilder: Date;
     setOrderBuilder: (input: Date) => void;
 }
+
 export const GlobalContext = createContext<GlobalInterface | undefined>(
     undefined
 );

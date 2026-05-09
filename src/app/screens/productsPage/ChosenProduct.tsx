@@ -67,6 +67,9 @@ export default function ChosenProduct(props: ChosenProductsProps) {
     .then((data) => setcompany(data))
     .catch((err) => console.log(err))
   }, []);
+  useEffect(() => {
+  window.scrollTo(0, 0);
+}, []);
 
   if(!chosenProduct) return null;
   return (

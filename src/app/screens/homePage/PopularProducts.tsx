@@ -22,10 +22,9 @@ export default function PopularProducts() {
         .sort((a: any, b: any) => (b.productViews ?? 0) - (a.productViews ?? 0))
         .slice(0, 3);
 
-    const handleViewProduct = (productId: string) => {
-        // Navigate to products page with the product id as a query param
-        history.push(`/products?productId=${productId}`);
-    };
+  const handleViewProduct = (productId: string) => {
+  history.push(`/products/${productId}`);
+};
 
     return (
         <div className="popular-dishes-frame">

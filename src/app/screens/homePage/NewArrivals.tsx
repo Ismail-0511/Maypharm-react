@@ -13,6 +13,7 @@ import { createSelector } from "reselect";
 import { retrieveNewArrivals } from "./selector";
 import { Product } from "../../../lib/types/product";
 import { serverApi } from "../../../lib/config";
+import { useHistory } from "react-router-dom";
 
 /** REDUX SLICE & SELECTOR **/
 const NewArrivalsRetriever = createSelector(
@@ -22,6 +23,7 @@ const NewArrivalsRetriever = createSelector(
 
 export default function NewArrivals() {
     const { NewArrivals } = useSelector(NewArrivalsRetriever);
+    const history = useHistory();
 
     return (
         <div className={"new-products-frame"}>
@@ -34,7 +36,12 @@ export default function NewArrivals() {
                                 NewArrivals.map((product: Product) => {
                                     const imagePath = `${serverApi}/${product.productImages[0]}`;
                                     return (
-                                        <Card key={product._id} variant="outlined" className={"card"}>
+                                        <Card 
+                                            key={product._id} 
+                                            variant="outlined" 
+                                            className={"card"} 
+                                            onClick={() => history.push(`/products/${product._id}`)}
+                                            sx={{ cursor: "pointer" }}>
                                             <CardOverflow>
                                                 <div className={"product-sale"}>
                                                     {product.productCollection}

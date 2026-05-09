@@ -15,25 +15,29 @@ import { Order, OrderInquiry } from "../../../lib/types/order";
 import { OrderStatus } from "../../../lib/enums/order.enum";
 import OrderService from "../../services/OrderService";
 import { useGlobals } from "../../hooks/useGlobals";
+import { MemberType } from "../../../lib/enums/member.enum";
+import { serverApi } from "../../../lib/config";
+import { useHistory } from "react-router-dom";
 
 /** REDUX SLICE & SELECTOR **/
 const actionDispatch = (dispatch: Dispatch) => ({
-    setPausedOrders: (data: Order[]) => dispatch(setPausedOrders(data)),
-    setProcessOrders: (data: Order[]) => dispatch(setProcessOrders(data)),
-    setFinishedOrders: (data: Order[]) => dispatch(setFinishedOrders(data)),
+  setPausedOrders: (data: Order[]) => dispatch(setPausedOrders(data)),
+  setProcessOrders: (data: Order[]) => dispatch(setProcessOrders(data)),
+  setFinishedOrders: (data: Order[]) => dispatch(setFinishedOrders(data)),
 });
 
-
 export default function OrdersPage() {
-    const {setPausedOrders, setProcessOrders, setFinishedOrders} = 
+  const { setPausedOrders, setProcessOrders, setFinishedOrders } =
     actionDispatch(useDispatch());
-    const {orderBuilder} = useGlobals();
-    const [value, setValue] = useState("1")
-    const [orderInquiry, setOrderInquiry] = useState<OrderInquiry>({
-        page: 1,
-        limit: 5,
-        orderStatus: OrderStatus.PAUSE,
-    })
+  const { orderBuilder, authMember } = useGlobals();
+  const history = useHistory();
+  const [value, setValue] = useState("1");
+  const [orderInquiry, setOrderInquiry] = useState<OrderInquiry>({
+    page: 1,
+    limit: 5,
+    orderStatus: OrderStatus.PAUSE,
+  });
+
 
 
     useEffect(() => {
@@ -87,31 +91,50 @@ export default function OrdersPage() {
                 </TabContext>
             </Stack>
             <Stack className={"order-right"}>
-                <Box className={"order-info-box"}>
-                    <Box className={"member-box"}>
-                        <div className="order-user-image">
-                            <img  className={"order-user-avatar"} src="/icons/default-user.svg" />
-                            <div className={"order-user-icon-box"}>
-                                <img src={"/icons/user-badge.svg"} className={"order-user-prof-img"} />
-                            </div>
-                            <span className={"order-user-name"}>Alex</span>
-                            <span className={"order-user-prof"}>User</span>
-                        </div>
-
-                    </Box>
-                    <Box className={"linier"}></Box>
-                    <Stack className={"order-user-location"} >
-                        <Box className={"order-user-location-frame"}>
-                            <div>                            
-                                <img src="/icons/location.svg" className={"user-location-svg"} style={{width: 24, height: 24, marginLeft: 30}} alt="" />
-                            </div>
-                            <div>
-                            <Box className={"order-user-location-txt"}>South Korea, Busan</Box>
-                            </div>
-                        </Box>
-                    </Stack>
-                </Box>
-                <Stack className={"order-user-card-frame"}>
+  <Box className={"order-info-box"}>
+    <Box className={"member-box"}>
+      <div className={"order-user-img"}>
+        <img
+          src={
+            authMember?.memberImage
+              ? `${serverApi}/${authMember.memberImage}`
+              : "/icons/default-user.svg"
+          }
+          className={"order-user-avatar"}
+        />
+        <div className={"order-user-icon-box"}>
+          <img
+            src={
+              authMember?.memberType === MemberType.COMPANY
+                ? "/icons/restaurant.svg"
+                : "/icons/user-badge.svg"
+            }
+            className={"order-user-prof-img"}
+          />
+        </div>
+      </div>
+                    <span className={"order-user-name"}>
+        {" "}
+        {authMember?.memberNick}
+      </span>
+      <span className={"order-user-prof"}>
+        {" "}
+        {authMember?.memberType}
+      </span>
+    </Box>
+    <Box className={"liner"}></Box>
+    <Box className={"order-user-address"}>
+      <div style={{ display: "flex" }}>
+        <LocationOn />
+      </div>
+      <div className={"spec-address-txt"}>
+        {authMember?.memberAddress
+          ? authMember.memberAddress
+          : "Do not exist"}
+      </div>
+    </Box>
+  </Box>
+  <Stack className={"order-user-card-frame"}>
                     <Stack className={"order-user-card-inputs"}>
                         <input type="text" name="cardNumber" placeholder={"Card number : **** 4090 2002 7495"}
                         className={"card-input"} />

@@ -1,338 +1,424 @@
+/* ══════════════════════════════════════
+   CSS VARIABLES  (same as product.css)
+══════════════════════════════════════ */
 .user-page {
-	width: 100%;
-	height: auto;
-	display: flex;
-	background: #f8f8ff;
+  --clr-bg:        #fafaf8;
+  --clr-white:     #ffffff;
+  --clr-ink:       #1a1a18;
+  --clr-ink-soft:  #5a5650;
+  --clr-muted:     #9a8f85;
+  --clr-rule:      #eeece8;
+  --clr-gold:      #c8b99a;
+  --clr-gold-dark: #9a7c5e;
+  --clr-hover-bg:  #f5f3ef;
+  --font-display:  "Cormorant Garamond", Georgia, serif;
+  --font-body:     "DM Sans", sans-serif;
+  --ease-out:      cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-.user-page .css-heg063-MuiTabs-flexContainer {
-	flex-direction: column;
+/* ══════════════════════════════════════
+   PAGE WRAPPER
+══════════════════════════════════════ */
+.user-page {
+  width: 100%;
+  min-height: 100vh;
+  background: var(--clr-bg);
+  font-family: var(--font-body);
 }
 
-.user-page .css-mn3ro6-MuiTabs-indicator {
-	height: 0px;
-	width: 0px;
-}
-
-.user-page .css-1ujnqem-MuiTabs-root {
-	width: 100%;
-}
-
+/* ══════════════════════════════════════
+   TWO-COLUMN FRAME
+══════════════════════════════════════ */
 .user-page .my-page-frame {
-	width: 100%;
-	height: auto;
-	display: flex;
-	flex-direction: row;
-	padding: 50px 0 50px 0;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 48px;
+  padding: 72px 0 100px;
 }
 
-.my-page-frame .my-page-left {
-	width: 70%;
-	height: auto;
-	display: flex;
-	flex-direction: column;
+/* ── Left: form ── */
+.user-page .my-page-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
 }
 
-.my-page-left .menu-name {
-	width: 100%;
-	height: 70px;
-	display: flex;
-	justify-content: center;
-	border-bottom: 1px solid #f8f8ff;
-	font-family: 'Poppins';
-	font-style: normal;
-	font-weight: 600;
-	font-size: 45px;
-	color: #000000;
+/* ── Right: profile card ── */
+.user-page .my-page-right {
+  width: 280px;
+  flex-shrink: 0;
+  position: sticky;
+  top: 88px;
 }
 
-.my-page-left .menu-content {
-	margin-top: 10px;
-	width: 100%;
-	height: auto;
-	display: flex;
-	flex-direction: column;
+/* ══════════════════════════════════════
+   PAGE TITLE
+══════════════════════════════════════ */
+.user-page .menu-name {
+  font-family: var(--font-display) !important;
+  font-style: italic !important;
+  font-weight: 400 !important;
+  font-size: 48px !important;
+  line-height: 1 !important;
+  color: var(--clr-ink) !important;
+  letter-spacing: -0.5px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--clr-rule);
+  margin-bottom: 40px;
+  justify-content: flex-start !important;
+  height: auto !important;
 }
 
-.my-page-left .write-content {
-	margin-top: 10px;
-	width: 100%;
-	height: auto;
-	display: flex;
-	flex-direction: column;
-}
-
-.user-page .menu-content .post-content {
-	margin-top: 10px;
-	width: 100%;
-	height: auto;
-	display: flex;
-	flex-direction: column;
-}
-
-.my-page-frame .my-page-right {
-	margin-left: 30px;
-	width: 30%;
-	height: auto;
-	display: flex;
-	flex-direction: column;
-}
-
-.user-page .order-info-box {
-	position: relative;
-	padding: 20px;
-	width: 100%;
-	height: auto;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	background: #f6f2ff;
-	box-shadow: 15px 14px 4px rgba(0, 0, 0, 0.25), inset -1px 0px 16px 13px rgb(24 23 112 / 20%);
-	border-radius: 16px;
-}
-
-.user-page .order-info-box .settings-btn {
-	position: absolute;
-	top: 6%;
-	right: 19%;
-	cursor: pointer;
-}
-
-.user-page .order-info-box .order-user-img {
-	position: relative;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-}
-
-.user-page .order-info-box .order-user-img .order-user-avatar {
-	width: 150px;
-	height: 150px;
-	filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-	border-radius: 37px;
-}
-
-.user-page .order-info-box .order-user-icon-box {
-	position: absolute;
-	padding: 5px;
-	width: 37px;
-	height: 37px;
-	top: 81%;
-	right: 0;
-	display: flex;
-	background: rgb(209 209 209 / 33%);
-	border-radius: 37px;
-}
-
-.user-page .order-info-box .order-user-name {
-	margin-top: 10px;
-	font-family: 'Commissioner';
-	font-style: normal;
-	font-weight: 500;
-	font-size: 28px;
-	line-height: 36px;
-	color: #08090d;
-	
-}
-
-.user-page .order-info-box .order-user-prof {
-	font-family: 'Commissioner';
-	font-style: normal;
-	font-weight: 500;
-	font-size: 20px;
-	line-height: 36px;
-	color: #a1a1a1;
-}
-
-.user-page .order-info-box .user-media-box {
-	margin-top: 10px;
-	width: 60%;
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-}
-
-.user-page .order-info-box .user-desc {
-	margin-top: 30px;
-	width: 90%;
-	display: flex;
-	justify-content: center;
-	font-family: 'DM Sans';
-	font-style: normal;
-	font-weight: 400;
-	font-size: 16px;
-	line-height: 24px;
-	color: #616164;
-}
-
-.user-page .order-info-box .css-1e3kzd4-MuiButtonBase-root-MuiButton-root {
-	margin-top: 15px;
-	min-width: 90%;
-	height: 44px;
-	text-transform: capitalize;
-	font-style: normal;
-	font-weight: 600;
-	font-size: 25px;
-	line-height: 38px;
-	color: #f8f8ff;
-}
-
-.user-page .menu-box img {
-	width: 25px;
-}
-
-.user-page .menu-box span {
-	margin-left: 30px;
-	font-family: 'Poppins';
-	font-style: normal;
-	font-weight: 600;
-	font-size: 25px;
-	line-height: 38px;
-	color: #000000;
-}
-
+/* ══════════════════════════════════════
+   SETTINGS FORM
+══════════════════════════════════════ */
 .user-page .settings {
-	width: 95%;
-	height: auto;
-	display: flex;
-	flex-direction: column;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }
 
-.user-page .settings .input-frame {
-	width: 100%;
-	height: auto;
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-}
-
-.user-page .settings .short-input {
-	width: 49%;
-	height: auto;
-	display: flex;
-	flex-direction: column;
-}
-
-.user-page .settings .long-input {
-	width: 100%;
-	height: auto;
-	display: flex;
-	flex-direction: column;
-}
-.user-page .settings .spec-label {
-	font-family: 'Source Serif Pro';
-	font-style: normal;
-	font-weight: 400;
-	font-size: 16px;
-	line-height: 25px;
-	color: #f8f8ff;
-}
-
-.user-page .settings .spec-input {
-	position: relative;
-	margin-top: 10px;
-	padding-left: 20px;
-	width: 100%;
-	height: 54px;
-	border: none;
-	background: #f7f7f7;
-	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-	border-radius: 5px;
-	font-family: 'GT Walsheim Pro';
-	font-style: normal;
-	font-weight: 400;
-	font-size: 15px;
-	line-height: 26px;
-	color: #4f547b;
-}
-
-.user-page .settings .spec-textarea {
-	position: relative;
-	margin-top: 10px;
-	padding: 20px;
-	width: 100%;
-	height: 200px;
-	border: none;
-	background: #f7f7f7;
-	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-	border-radius: 5px;
-	font-family: 'GT Walsheim Pro';
-	font-style: normal;
-	font-weight: 400;
-	font-size: 15px;
-	line-height: 26px;
-	color: #4f547b;
-}
-
+/* Image upload row */
 .user-page .settings .member-media-frame {
-	margin-top: 25px;
-	position: relative;
-	padding: 10px;
-	width: 100%;
-	height: auto;
-	display: flex;
-	border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 24px;
+  padding: 20px;
+  background: var(--clr-white);
+  border: 1px solid var(--clr-rule);
+  margin: 0;
 }
 
 .user-page .settings .member-media-frame .mb-image {
-	width: 100px;
-	height: 100px;
-	border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--clr-rule);
+  flex-shrink: 0;
 }
 
-.user-page .settings .media_change-box {
-	position: relative;
-	margin-left: 20px;
-	width: auto;
-	height: 100%;
-	display: flex;
-	flex-direction: column;
+.user-page .settings .media-change-box {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-left: 0;
 }
 
 .user-page .settings .media-change-box span {
-	font-family: 'GT Walsheim Pro';
-	font-style: normal;
-	font-weight: 400;
-	font-size: 16px;
-	line-height: 18px;
-	color: #140342;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  color: var(--clr-ink);
 }
 
 .user-page .settings .media-change-box p {
-	margin: 10px 0px 14px 0px;
-	font-family: 'GT Walsheim Pro';
-	font-style: normal;
-	font-weight: 400;
-	font-size: 14px;
-	line-height: 16px;
-	color: #4f547b;
+  font-family: var(--font-body);
+  font-size: 11px;
+  color: var(--clr-muted);
+  margin: 0 0 10px;
+  letter-spacing: 0.5px;
 }
 
 .user-page .settings .up-del-box {
-	position: relative;
-	width: 37px;
-	height: 37px;
-	display: flex;
-	background: #cbcbcb;
-	border-radius: 8px;
-	justify-content: center;
-	align-items: center;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--clr-ink);
+  border-radius: 0;
+  transition: background 0.2s;
 }
 
-.user-page .settings .up-del-box input {
-	position: absolute;
-	width: 20px;
-	height: 16px;
-	padding: 0;
-	background: red;
-	margin: -1px;
-	overflow: hidden;
-	clip: rect(0, 0, 0, 0);
-	border: 0;
+.user-page .settings .up-del-box:hover {
+  background: var(--clr-gold-dark);
 }
 
+.user-page .settings .up-del-box .MuiButton-root {
+  min-width: 0 !important;
+  padding: 0 !important;
+  color: var(--clr-white) !important;
+}
+
+.user-page .settings .up-del-box svg {
+  color: var(--clr-white);
+  font-size: 18px;
+}
+
+/* Input rows */
+.user-page .settings .input-frame {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+}
+
+.user-page .settings .short-input {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.user-page .settings .long-input {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* Labels */
+.user-page .settings .spec-label {
+  font-family: var(--font-body);
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--clr-muted);
+}
+
+/* Text inputs */
+.user-page .settings .spec-input {
+  width: 100%;
+  height: 48px;
+  padding: 0 16px;
+  border: 1px solid var(--clr-rule);
+  border-radius: 0;
+  background: var(--clr-white);
+  box-shadow: none;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--clr-ink);
+  outline: none;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+  margin-top: 0;
+}
+
+.user-page .settings .spec-input:focus {
+  border-color: var(--clr-ink);
+}
+
+.user-page .settings .spec-input::placeholder {
+  color: var(--clr-muted);
+}
+
+/* Textarea */
+.user-page .settings .spec-textarea {
+  width: 100%;
+  height: 160px;
+  padding: 16px;
+  border: 1px solid var(--clr-rule);
+  border-radius: 0;
+  background: var(--clr-white);
+  box-shadow: none;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--clr-ink);
+  outline: none;
+  resize: vertical;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+  margin-top: 0;
+}
+
+.user-page .settings .spec-textarea:focus {
+  border-color: var(--clr-ink);
+}
+
+.user-page .settings .spec-textarea::placeholder {
+  color: var(--clr-muted);
+}
+
+/* Save button row */
 .user-page .settings .save-box {
-	display: flex;
-	justify-content: flex-end;
-	margin-top: 25px;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 8px;
+}
+
+.user-page .settings .save-box .MuiButton-root {
+  width: 160px !important;
+  height: 48px !important;
+  background: var(--clr-ink) !important;
+  border-radius: 0 !important;
+  font-family: var(--font-body) !important;
+  font-size: 10px !important;
+  font-weight: 500 !important;
+  letter-spacing: 3px !important;
+  text-transform: uppercase !important;
+  box-shadow: none !important;
+  color: var(--clr-white) !important;
+  transition: background 0.2s !important;
+}
+
+.user-page .settings .save-box .MuiButton-root:hover {
+  background: var(--clr-gold-dark) !important;
+}
+
+/* ══════════════════════════════════════
+   RIGHT PROFILE CARD
+══════════════════════════════════════ */
+.user-page .order-info-box {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 24px 32px;
+  background: var(--clr-white);
+  border: 1px solid var(--clr-rule);
+  border-radius: 0;
+  box-shadow: none;
+  gap: 0;
+}
+
+/* Avatar */
+.user-page .order-info-box .order-user-img {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.user-page .order-info-box .order-user-img .order-user-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--clr-rule);
+  filter: none;
+}
+
+/* Name */
+.user-page .order-info-box .order-user-name {
+  margin-top: 20px;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 1.1;
+  color: var(--clr-ink);
+  text-align: center;
+}
+
+/* Role / address */
+.user-page .order-info-box .order-user-prof {
+  margin-top: 4px;
+  font-family: var(--font-body);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--clr-muted);
+  text-align: center;
+}
+
+/* Divider rule */
+.user-page .order-info-box::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 1px;
+  background: var(--clr-gold);
+  margin: 20px auto 0;
+}
+
+/* Social icons */
+.user-page .order-info-box .user-media-box {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.user-page .order-info-box .user-media-box svg {
+  font-size: 18px;
+  color: var(--clr-muted);
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.user-page .order-info-box .user-media-box svg:hover {
+  color: var(--clr-ink);
+}
+
+/* Description */
+.user-page .order-info-box .user-desc {
+  margin-top: 20px;
+  width: 100%;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--clr-ink-soft);
+  text-align: center;
+  word-break: break-word;
+}
+
+/* ══════════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════════ */
+@media (max-width: 900px) {
+  .user-page .my-page-frame {
+    flex-direction: column-reverse;
+    gap: 32px;
+    padding: 48px 0 80px;
+  }
+
+  .user-page .my-page-right {
+    width: 100%;
+    position: static;
+  }
+
+  .user-page .order-info-box {
+    flex-direction: row;
+    align-items: center;
+    gap: 24px;
+    padding: 24px;
+    text-align: left;
+  }
+
+  .user-page .order-info-box .order-user-img .order-user-avatar {
+    width: 80px;
+    height: 80px;
+  }
+
+  .user-page .order-info-box .order-user-name {
+    font-size: 22px;
+    margin-top: 0;
+    text-align: left;
+  }
+
+  .user-page .order-info-box .order-user-prof,
+  .user-page .order-info-box .user-desc {
+    text-align: left;
+  }
+
+  .user-page .order-info-box::after {
+    display: none;
+  }
+
+  .user-page .menu-name {
+    font-size: 36px !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .user-page .settings .input-frame {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .user-page .settings .short-input {
+    width: 100%;
+  }
 }

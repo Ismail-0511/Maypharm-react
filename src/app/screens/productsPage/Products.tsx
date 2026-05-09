@@ -42,7 +42,7 @@ export default function Products(props: ProductsProps) {
     page: 1,
     limit: 8,
     order: "createdAt",
-    productCollection: ProductCollection.FILLER,
+    productCollection: undefined,
     search: "",
   });
 
@@ -67,8 +67,12 @@ export default function Products(props: ProductsProps) {
 
   /** HANDLERS **/
   const searchCollectionHandler = (collection: ProductCollection) => {
-    setProductSearch((prev) => ({ ...prev, page: 1, productCollection: collection }));
-  };
+  setProductSearch((prev) => ({
+    ...prev,
+    page: 1,
+    productCollection: prev.productCollection === collection ? undefined : collection,
+  }));
+};
 
   const searchOrderHandler = (order: string) => {
     setProductSearch((prev) => ({ ...prev, page: 1, order }));
@@ -82,7 +86,7 @@ export default function Products(props: ProductsProps) {
     setProductSearch((prev) => ({ ...prev, page: value }));
   };
 
-  const chooseDishHandler = (id: string) => {
+  const chooseProductHandler = (id: string) => {
     history.push(`/products/${id}`);
   };
 
@@ -185,7 +189,7 @@ export default function Products(props: ProductsProps) {
                     <Stack
                       key={product._id}
                       className={"product-card"}
-                      onClick={() => chooseDishHandler(product._id)}
+                      onClick={() => chooseProductHandler(product._id)}
                     >
                       <Stack
                         className={"product-img"}
