@@ -28,5 +28,5 @@ export interface HomePageState {
 export interface OrdersPageState {
     pausedOrders: Order[];
     processOrders: Order[];
-    finishedOrders: Order[]
+    ReceivedOrders: Order[]
 }

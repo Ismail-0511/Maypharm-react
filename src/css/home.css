@@ -5,6 +5,11 @@
 .homepage {
     width: 100%;
     height: auto;
+    background: url("/public/img/background.png") no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-color: #ffffff;
 }
 
 /* 
@@ -12,18 +17,13 @@
  */
 
 .about-us-section {
-   width: 100%;
-  height: 70vh; 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: url("/public/img/background.png") no-repeat;
-  background-size: 100%; 
-  background-position: right center; 
-  background-color: #f4f4f4; 
-  
-  background-attachment: fixed;
-  overflow: hidden;
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(222, 255, 252, 0.6);
+    overflow: hidden;
 }
 
 .about-us-header-content {
@@ -51,7 +51,7 @@
 
 /* The black box behind "BEAUTIFUL" */
 .slogan-highlight {
-  background-color: #000;
+  background-color: #313131;
   color: #fff;
   padding: 0 6px;
   display: inline-block;
@@ -65,7 +65,7 @@
 
 .about-us-card {
   width: 500px; 
-  background: white;
+  background: rgb(251, 251, 251);
   opacity: 65%;
   padding: 50px;
   box-shadow: 0 15px 45px rgba(0, 0, 0, 0.1);
@@ -110,45 +110,34 @@
   opacity: 0.6;
 }
 
-
-/* 
-   POPULAR PRODUCTS
- */
-
-/* ============================================================
-   POPULAR PRODUCTS — Editorial Luxury Redesign
-   Replace the existing .popular-dishes-frame block in home.css
-   ============================================================ */
-
-/* Fonts: add to your <head> if not already present
-   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-*/
-
 /* ----------------------------------------------------------
    Section wrapper
    ---------------------------------------------------------- */
-.homepage .popular-dishes-frame {
-    width: 100%;
-    padding: 100px 0 120px;
-    background: #fafaf8;
-    position: relative;
-    overflow: hidden;
+
+   .homepage .popular-products-frame {
+ 
+   background: rgba(222, 255, 252, 0.6);
+  
+}
+  
+.homepage .popular-products-frame::before {
+  content: "";
+  position: absolute;
+  top: -10%;
+  right: -5%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(176, 255, 245, 0.15) 0%, rgba(255,255,255,0) 70%);
+  border-radius: 50%;
+  filter: blur(80px);
+  z-index: -1;
 }
 
-/* Subtle grain texture via pseudo-element */
-.homepage .popular-dishes-frame::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
-    pointer-events: none;
-    opacity: 0.4;
-}
 
 /* ----------------------------------------------------------
    Section header
    ---------------------------------------------------------- */
-.homepage .popular-dishes-frame .pp-header {
+.homepage .popular-products-frame .pp-header {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -156,7 +145,7 @@
     position: relative;
 }
 
-.homepage .popular-dishes-frame .pp-eyebrow {
+.homepage .popular-products-frame .pp-eyebrow {
     font-family: "DM Sans", sans-serif;
     font-size: 10px;
     font-weight: 500;
@@ -166,7 +155,7 @@
     margin-bottom: 14px;
 }
 
-.homepage .popular-dishes-frame .pp-title {
+.homepage .popular-products-frame .pp-title {
     font-family: "Cormorant Garamond", "Georgia", serif;
     font-size: clamp(36px, 5vw, 56px);
     font-weight: 400;
@@ -177,16 +166,16 @@
     line-height: 1;
 }
 
-.homepage .popular-dishes-frame .pp-title-rule {
+.homepage .popular-products-frame .pp-title-rule {
     width: 48px;
     height: 1px;
-    background: #c8b99a;
+    background: #defffc;
 }
 
 /* ----------------------------------------------------------
    Product grid — 3-column on desktop
    ---------------------------------------------------------- */
-.homepage .popular-dishes-frame .pp-grid {
+.homepage .popular-products-frame .pp-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2px;
@@ -196,7 +185,7 @@
 /* ----------------------------------------------------------
    Individual card
    ---------------------------------------------------------- */
-.homepage .popular-dishes-frame .pp-card {
+.homepage .popular-products-frame .pp-card {
     display: flex;
     flex-direction: column;
     cursor: pointer;
@@ -206,16 +195,16 @@
 }
 
 /* First card — taller, more prominent */
-.homepage .popular-dishes-frame .pp-card--0 .pp-card__image-wrap {
+.homepage .popular-products-frame .pp-card--0 .pp-card__image-wrap {
     height: 520px;
 }
 
-.homepage .popular-dishes-frame .pp-card--1 .pp-card__image-wrap,
-.homepage .popular-dishes-frame .pp-card--2 .pp-card__image-wrap {
+.homepage .popular-products-frame .pp-card--1 .pp-card__image-wrap,
+.homepage .popular-products-frame .pp-card--2 .pp-card__image-wrap {
     height: 400px;
 }
 
-.homepage .popular-dishes-frame .pp-card--hovered {
+.homepage .popular-products-frame .pp-card--hovered {
     transform: translateY(-8px);
     z-index: 2;
 }
@@ -223,14 +212,14 @@
 /* ----------------------------------------------------------
    Image area
    ---------------------------------------------------------- */
-.homepage .popular-dishes-frame .pp-card__image-wrap {
+.homepage .popular-products-frame .pp-card__image-wrap {
     width: 100%;
     position: relative;
     overflow: hidden;
-    background: #f0ede8;
+    background: #f2fffe;
 }
 
-.homepage .popular-dishes-frame .pp-card__img {
+.homepage .popular-products-frame .pp-card__img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -238,11 +227,11 @@
     transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-.homepage .popular-dishes-frame .pp-card--hovered .pp-card__img {
+.homepage .popular-products-frame .pp-card--hovered .pp-card__img {
     transform: scale(1.06);
 }
 
-.homepage .popular-dishes-frame .pp-card__overlay {
+.homepage .popular-products-frame .pp-card__overlay {
     position: absolute;
     inset: 0;
     background: linear-gradient(
@@ -253,14 +242,14 @@
     transition: opacity 0.4s ease;
 }
 
-.homepage .popular-dishes-frame .pp-card--hovered .pp-card__overlay {
+.homepage .popular-products-frame .pp-card--hovered .pp-card__overlay {
     opacity: 0.8;
 }
 
 /* ----------------------------------------------------------
    Rank badge
    ---------------------------------------------------------- */
-.homepage .popular-dishes-frame .pp-card__rank {
+.homepage .popular-products-frame .pp-card__rank {
     position: absolute;
     top: 20px;
     left: 20px;
@@ -275,7 +264,7 @@
 /* ----------------------------------------------------------
    Views pill (bottom-right of image)
    ---------------------------------------------------------- */
-.homepage .popular-dishes-frame .pp-card__views {
+.homepage .popular-products-frame .pp-card__views {
     position: absolute;
     bottom: 16px;
     right: 16px;
@@ -299,7 +288,7 @@
 /* ----------------------------------------------------------
    Card content
    ---------------------------------------------------------- */
-.homepage .popular-dishes-frame .pp-card__content {
+.homepage .popular-products-frame .pp-card__content {
     padding: 28px 28px 32px;
     display: flex;
     flex-direction: column;
@@ -308,13 +297,13 @@
     flex: 1;
 }
 
-.homepage .popular-dishes-frame .pp-card__meta {
+.homepage .popular-products-frame .pp-card__meta {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.homepage .popular-dishes-frame .pp-card__category {
+.homepage .popular-products-frame .pp-card__category {
     font-family: "DM Sans", sans-serif;
     font-size: 9px;
     font-weight: 500;
@@ -323,14 +312,14 @@
     color: #c8b99a;
 }
 
-.homepage .popular-dishes-frame .pp-card__price {
+.homepage .popular-products-frame .pp-card__price {
     font-family: "DM Sans", sans-serif;
     font-size: 13px;
     font-weight: 500;
     color: #1a1a18;
 }
 
-.homepage .popular-dishes-frame .pp-card__name {
+.homepage .popular-products-frame .pp-card__name {
     font-family: "Cormorant Garamond", "Georgia", serif;
     font-size: 22px;
     font-weight: 600;
@@ -340,7 +329,7 @@
     letter-spacing: -0.2px;
 }
 
-.homepage .popular-dishes-frame .pp-card__desc {
+.homepage .popular-products-frame .pp-card__desc {
     font-family: "DM Sans", sans-serif;
     font-size: 12.5px;
     font-weight: 300;
@@ -355,7 +344,7 @@
 /* ----------------------------------------------------------
    CTA Button
    ---------------------------------------------------------- */
-.homepage .popular-dishes-frame .pp-card__cta {
+.homepage .popular-products-frame .pp-card__cta {
     display: inline-flex;
     align-items: center;
     gap: 8px;
@@ -375,22 +364,22 @@
     transition: gap 0.25s ease, color 0.25s ease;
 }
 
-.homepage .popular-dishes-frame .pp-card__cta::after {
+.homepage .popular-products-frame .pp-card__cta::after {
     content: "";
     position: absolute;
     bottom: -3px;
     left: 0;
     width: 0;
     height: 1px;
-    background: #c8b99a;
+    background: #edfaf9;
     transition: width 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-.homepage .popular-dishes-frame .pp-card--hovered .pp-card__cta::after {
+.homepage .popular-products-frame .pp-card--hovered .pp-card__cta::after {
     width: 100%;
 }
 
-.homepage .popular-dishes-frame .pp-card--hovered .pp-card__cta {
+.homepage .popular-products-frame .pp-card--hovered .pp-card__cta {
     gap: 12px;
     color: #9a7c5e;
 }
@@ -398,7 +387,7 @@
 /* ----------------------------------------------------------
    No-data state
    ---------------------------------------------------------- */
-.homepage .popular-dishes-frame .no-data {
+.homepage .popular-products-frame .no-data {
     width: 100%;
     height: 300px;
     display: flex;
@@ -415,24 +404,24 @@
    Responsive
    ---------------------------------------------------------- */
 @media (max-width: 900px) {
-    .homepage .popular-dishes-frame .pp-grid {
+    .homepage .popular-products-frame .pp-grid {
         grid-template-columns: 1fr;
         gap: 2px;
     }
 
-    .homepage .popular-dishes-frame .pp-card--0 .pp-card__image-wrap,
-    .homepage .popular-dishes-frame .pp-card--1 .pp-card__image-wrap,
-    .homepage .popular-dishes-frame .pp-card--2 .pp-card__image-wrap {
+    .homepage .popular-products-frame .pp-card--0 .pp-card__image-wrap,
+    .homepage .popular-products-frame .pp-card--1 .pp-card__image-wrap,
+    .homepage .popular-products-frame .pp-card--2 .pp-card__image-wrap {
         height: 300px;
     }
 }
 
 @media (min-width: 901px) and (max-width: 1200px) {
-    .homepage .popular-dishes-frame .pp-card--0 .pp-card__image-wrap {
+    .homepage .popular-products-frame .pp-card--0 .pp-card__image-wrap {
         height: 420px;
     }
-    .homepage .popular-dishes-frame .pp-card--1 .pp-card__image-wrap,
-    .homepage .popular-dishes-frame .pp-card--2 .pp-card__image-wrap {
+    .homepage .popular-products-frame .pp-card--1 .pp-card__image-wrap,
+    .homepage .popular-products-frame .pp-card--2 .pp-card__image-wrap {
         height: 340px;
     }
 }
@@ -444,7 +433,7 @@
 .homepage .new-products-frame {
     width: 100%;
     height: 620px;
-    background: #f7f7f7;
+    background: rgba(222, 255, 252, 0.6);
 }
 
 .homepage .new-products-frame .main {
@@ -512,7 +501,7 @@
     display: flex;
     justify-content: center;
     padding: 12px;
-    border: 1px solid #eeeeee;
+    border: 1px solid #ffffff;
     background-color: #ffffff;
 }
 
@@ -575,106 +564,26 @@
    OUR SERVICE
  */
 
-.homepage .our-service-frame {
-    width: 100%;
-    padding: 72px 0 80px;
-    background: linear-gradient(135deg, #6a3ca5 0%, #4a2c8a 100%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.homepage .our-service-frame .our-service-title {
-    font-family: "Poppins", sans-serif;
-    font-size: 26px;
-    font-weight: 700;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: #ffffff;
-    text-align: center;
-}
-
-.homepage .our-service-frame .our-service-subtitle {
-    font-family: "Poppins", sans-serif;
-    font-size: 13px;
-    font-weight: 400;
-    letter-spacing: 0.5px;
-    color: rgba(255, 255, 255, 0.65);
-    text-align: center;
-    margin-top: 10px;
-}
-
-.homepage .our-service-frame .our-service-cards {
-    margin-top: 56px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 0;
-    width: 100%;
-    max-width: 900px;
-}
-
-.homepage .our-service-frame .service-card {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 14px;
-    padding: 0 40px;
-}
-
-.homepage .our-service-frame .service-icon {
-    width: 64px;
-    height: 64px;
-    opacity: 0.9;
-    filter: brightness(0) invert(1);
-}
-
-.homepage .our-service-frame .service-card-title {
-    font-family: "Poppins", sans-serif;
-    font-size: 15px;
-    font-weight: 600;
-    color: #ffffff;
-    text-align: center;
-    letter-spacing: 0.5px;
-}
-
-.homepage .our-service-frame .service-card-desc {
-    font-family: "Poppins", sans-serif;
-    font-size: 12px;
-    font-weight: 400;
-    color: rgba(255, 255, 255, 0.6);
-    text-align: center;
-}
-
-.homepage .our-service-frame .service-divider {
-    width: 1px;
-    height: 80px;
-    background: rgba(255, 255, 255, 0.2);
-    flex-shrink: 0;
-}
 
 /* 
    ACTIVE USERS
  */
 
-.homepage .active-users-frame {
+ .homepage .active-users-frame {
     width: 100%;
-    min-height: 520px;
-    background: #ffffff;
+    padding: 72px 0 80px;
+    background: rgba(222, 255, 252, 0.6);
     display: flex;
-}
+ }
 
-.homepage .active-users-frame .main {
+ .homepage .active-users-frame .main {
     padding-top: 56px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
 }
 
-.homepage .active-users-frame .category-title {
+ .homepage .active-users-frame .main .category-title {
     font-family: "Poppins", sans-serif;
     font-size: 26px;
     font-weight: 700;
@@ -684,50 +593,55 @@
 }
 
 .homepage .cards-frame {
-    width: 100%;
-    margin-top: 36px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 16px;
+  width: 100%;
+  margin-top: 36px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: stretch; /* Forces all cards in a row to be the same height */
 }
 
 .homepage .cards-frame .card {
-    min-height: 260px;
-    min-width: 240px;
-    cursor: pointer;
-    border-radius: 2px;
-    transition: transform 0.3s ease;
-    overflow: hidden;
+  width: 240px; /* Fixed width ensures they don't look uneven */
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  border-radius: 4px; /* Slightly more modern than 2px */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+  background: #ffffff;
 }
 
-.homepage .cards-frame .card:hover {
-    transform: translateY(-4px);
+/* Ensure the text container fills the remaining space */
+.homepage .cards-frame .card .joy-CardOverflow:last-child {
+  flex-grow: 1; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .homepage .cards-frame .member-nickname {
-    font-size: 13px;
-    font-family: "Poppins", sans-serif;
-    font-weight: 500;
-    text-align: center;
-    color: #212121;
-    letter-spacing: 0.5px;
-    padding: 10px 0;
+  font-size: 13px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600; /* Increased for better hierarchy */
+  text-align: center;
+  color: #212121;
+  letter-spacing: 0.5px;
+  padding: 10px 10px 2px; /* Adjusted padding */
 }
 
-.homepage .cards-frame .no-data {
-    width: 100%;
-    height: 200px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-transform: uppercase;
-    font-family: "Poppins", sans-serif;
-    font-size: 14px;
-    letter-spacing: 2px;
-    color: #aaaaaa;
+.homepage .cards-frame .member-desc {
+  font-size: 11px; /* Slightly smaller for description */
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  text-align: center;
+  color: #666666; /* Grey color for description text */
+  letter-spacing: 0.5px;
+  padding: 0 10px 15px;
 }
+
 
 /* 
    PROMOTIONAL VIDEO  (replaces events)
@@ -736,7 +650,7 @@
 .homepage .promo-video-frame {
     width: 100%;
     padding: 72px 0 80px;
-    background: #f7f7f7;
+    background: rgba(222, 255, 252, 0.6);
     display: flex;
 }
 

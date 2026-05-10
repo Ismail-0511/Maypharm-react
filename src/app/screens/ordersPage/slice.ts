@@ -7,7 +7,7 @@ import { OrdersPageState } from "../../../lib/types/screen";
 const initialState: OrdersPageState = {
     pausedOrders: [],
     processOrders: [],
-    finishedOrders: [],
+    ReceivedOrders: [],
 }
 
 // SLICE yaratyapmiz 
@@ -21,13 +21,13 @@ const ordersPageSlice = createSlice({
         setProcessOrders: (state, action) => { // state => state_ni ichidan, payload => useEffect_dan olinyapti(homePage.index.ts)
             state.processOrders = action.payload
         },
-        setFinishedOrders: (state, action) => { // state => state_ni ichidan, payload => useEffect_dan olinyapti(homePage.index.ts)
-            state.finishedOrders = action.payload
+        setReceivedOrders: (state, action) => { // state => state_ni ichidan, payload => useEffect_dan olinyapti(homePage.index.ts)
+            state.ReceivedOrders = action.payload
         },
     },
 });
 
-export const {setPausedOrders, setProcessOrders, setFinishedOrders} = ordersPageSlice.actions;
+export const {setPausedOrders, setProcessOrders, setReceivedOrders} = ordersPageSlice.actions;
 
 const OrdersPageReducer = ordersPageSlice.reducer;
 export default OrdersPageReducer; // STORE ga joylash uchun export qilinyapti (yani biz reducerimizni store ga joylashimiz kerak DATA_ni olish uchun)

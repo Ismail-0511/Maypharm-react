@@ -27,7 +27,7 @@ export default function PopularProducts() {
 };
 
     return (
-        <div className="popular-dishes-frame">
+        <div className="popular-products-frame">
             <Container maxWidth="lg">
                 {/* Section Header */}
                 <div className="pp-header">

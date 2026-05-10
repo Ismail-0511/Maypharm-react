@@ -26,18 +26,25 @@ export default function ActiveUsers() {
                                 topUsers.map((member: Member) => {
                                     const imagePath = `${serverApi}/${member.memberImage}`;
                                     return (
-                                        <Card key={member._id} variant="outlined" className={"card"}>
-                                            <CardOverflow>
-                                                <AspectRatio ratio="1">
-                                                    <img src={imagePath} alt="" />
-                                                </AspectRatio>
-                                            </CardOverflow>
-                                            <CardOverflow>
-                                                <Typography className={"member-nickname"}>
-                                                    {member.memberNick}
-                                                </Typography>
-                                            </CardOverflow>
-                                        </Card>
+                                       <Card key={member._id} variant="outlined" className={"card"}>
+                                        <CardOverflow>
+                                            <AspectRatio ratio="1">
+                                            <img 
+                                                src={imagePath} 
+                                                alt="" 
+                                                style={{ objectFit: "cover", objectPosition: "top" }} // ADD THIS
+                                            />
+                                            </AspectRatio>
+                                        </CardOverflow>
+                                        <CardOverflow>
+                                            <Typography className={"member-nickname"}>
+                                            {member.memberNick}
+                                            </Typography>
+                                            <Typography className={"member-desc"}>
+                                            {member.memberDesc}
+                                            </Typography>
+                                        </CardOverflow>
+                                      </Card>
                                     );
                                 })
                             ) : (

@@ -2,23 +2,23 @@ import  TabPanel from "@mui/lab/TabPanel";
 import { Box, Stack } from "@mui/material";
 import { useSelector } from "react-redux";
 import { createSelector } from "reselect";
-import { retrieveFinishedOrders } from "./selector";
+import { retrieveReceivedOrders } from "./selector";
 import { serverApi } from "../../../lib/config";
 import { Order, OrderItem } from "../../../lib/types/order";
 import { Product } from "../../../lib/types/product";
 
 /** REDUX SLICE & SELECTOR */
-const finishedOrdersRetriever = createSelector(
-  retrieveFinishedOrders,
-  (finishedOrders) => ({ finishedOrders })
+const ReceivedOrdersRetriever = createSelector(
+  retrieveReceivedOrders,
+  (ReceivedOrders) => ({ ReceivedOrders })
 );
 
-export default function FinishedOrders() {
-    const { finishedOrders } = useSelector(finishedOrdersRetriever);
+export default function ReceivedOrders() {
+    const { ReceivedOrders } = useSelector(ReceivedOrdersRetriever);
     return(
         <TabPanel value={"3"}>
             <Stack>
-                {finishedOrders?.map((order: Order) => {
+                {ReceivedOrders?.map((order: Order) => {
                 return(
                     <Box key={order._id} className = {"order-main-box"}>
                         <Box className= {"order-box-scroll"}>
@@ -61,8 +61,8 @@ export default function FinishedOrders() {
                     </Box>
                 );
             })}
-                {!finishedOrders 
-                || (finishedOrders.length === 0 && (
+                {!ReceivedOrders 
+                || (ReceivedOrders.length === 0 && (
                     <Box display={"flex"} flexDirection={"row"} justifyContent={"center"}>
                     <img 
                     src={"/icons/noimage-list.svg"} alt="" 

@@ -20,7 +20,7 @@ export default function Footer() {
         <Stack flexDirection={"row"} sx={{ mt: "94px" }}>
           <Stack flexDirection={"column"} style={{ width: "340px" }}>
             <Box>
-              <img width={"140px"} src={"/icons/logo.svg"} />
+              <img width={"140px"} src={"/icons/logo.png"} />
             </Box>
             <Box className={"foot-desc-txt"}>
               A global leader in cosmetic medicine and dermo-cosmetic products,
@@ -28,10 +28,18 @@ export default function Footer() {
               manufactured in strict accordance with KFDA safety standards.
             </Box>
             <Box className="sns-context">
-              <img src={"/icons/facebook.svg"} />
-              <img src={"/icons/twitter.svg"} />
-              <img src={"/icons/instagram.svg"} />
-              <img src={"/icons/youtube.svg"} />
+              <a href="https://www.facebook.com/profile.php?id=100076786523475&locale=ru_RU" target="_blank" rel="noopener noreferrer">
+            <img src={"/icons/facebook.svg"} alt="Facebook" />
+              </a>
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+            <img src={"/icons/twitter.svg"} alt="Twitter" />
+              </a>
+               <a href="https://www.instagram.com/1.ismaaill?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer">
+            <img src={"/icons/instagram.svg"} alt="Instagram" />
+               </a>
+               <a href="https://youtu.be/241iic7NuJY?si=jeFPYEMt5LHXzSZ6" target="_blank" rel="noopener noreferrer">
+            <img src={"/icons/youtube.svg"} alt="YouTube" />
+               </a>
             </Box>
           </Stack>
           <Stack sx={{ ml: "288px" }} flexDirection={"row"}>

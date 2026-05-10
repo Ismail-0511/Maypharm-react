@@ -1,6 +1,5 @@
 import React, { ChangeEvent, useEffect, useState } from "react";
 import { Container, Box, Stack, Button } from "@mui/material";
-import MonetizationOnIcon from "@mui/icons-material/MonetizationOn";
 import RemoveRedEyeIcon from "@mui/icons-material/RemoveRedEye";
 import Badge from "@mui/material/Badge";
 import Pagination from "@mui/material/Pagination";
@@ -40,7 +39,7 @@ export default function Products(props: ProductsProps) {
 
   const [productSearch, setProductSearch] = useState<ProductInquiry>({
     page: 1,
-    limit: 8,
+    limit: 4,
     order: "createdAt",
     productCollection: undefined,
     search: "",
@@ -123,8 +122,8 @@ export default function Products(props: ProductsProps) {
           </Stack>
 
           {/* Order Filter */}
-          <Stack className={"dishes-filter-section"}>
-            <Stack className={"dishes-filter-box"}>
+          <Stack className={"products-filter-section"}>
+            <Stack className={"products-filter-box"}>
               <Button
                 className={"order"}
                 variant={"contained"}
@@ -153,7 +152,7 @@ export default function Products(props: ProductsProps) {
           </Stack>
 
           {/* Category + Product Grid */}
-          <Stack className={"list-category-section"}>
+          <Stack className={"list-category-section"} flexDirection={"column"}>
 
 
             <Stack className="product-category">
@@ -226,15 +225,17 @@ export default function Products(props: ProductsProps) {
                             />
                           </Badge>
                         </Button>
+                        <span className={"price-pill"}>
+                          ${product.productPrice}
+                        </span>
                       </Stack>
                       <Box className={"product-desc"}>
+                        <span className={"product-collection"}>
+                          {product.productCollection}
+                        </span>
                         <span className={"product-title"}>
                           {product.productName}
                         </span>
-                        <div className={"product-desc"}>
-                          <MonetizationOnIcon />
-                          {product.productPrice}
-                        </div>
                       </Box>
                     </Stack>
                   );

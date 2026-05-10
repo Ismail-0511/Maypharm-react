@@ -19,7 +19,7 @@ public async createOrder(input: CartItem[]): Promise<Order> {
             }
         })
 
-        const url = `${this.path} + /order/create`;
+        const url = `${this.path}/order/create`;
         const result = await axios.post(url, orderItems, 
             {withCredentials: true
             }); 

@@ -1,5 +1,5 @@
 /* ══════════════════════════════════════
-   CSS VARIABLES  (same as product.css)
+   CSS VARIABLES
 ══════════════════════════════════════ */
 .user-page {
   --clr-bg:        #fafaf8;
@@ -10,15 +10,11 @@
   --clr-rule:      #eeece8;
   --clr-gold:      #c8b99a;
   --clr-gold-dark: #9a7c5e;
-  --clr-hover-bg:  #f5f3ef;
   --font-display:  "Cormorant Garamond", Georgia, serif;
   --font-body:     "DM Sans", sans-serif;
   --ease-out:      cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-/* ══════════════════════════════════════
-   PAGE WRAPPER
-══════════════════════════════════════ */
 .user-page {
   width: 100%;
   min-height: 100vh;
@@ -26,9 +22,7 @@
   font-family: var(--font-body);
 }
 
-/* ══════════════════════════════════════
-   TWO-COLUMN FRAME
-══════════════════════════════════════ */
+/* TWO-COLUMN FRAME */
 .user-page .my-page-frame {
   width: 100%;
   display: flex;
@@ -38,7 +32,6 @@
   padding: 72px 0 100px;
 }
 
-/* ── Left: form ── */
 .user-page .my-page-left {
   flex: 1;
   display: flex;
@@ -46,7 +39,6 @@
   min-width: 0;
 }
 
-/* ── Right: profile card ── */
 .user-page .my-page-right {
   width: 280px;
   flex-shrink: 0;
@@ -54,9 +46,7 @@
   top: 88px;
 }
 
-/* ══════════════════════════════════════
-   PAGE TITLE
-══════════════════════════════════════ */
+/* PAGE TITLE */
 .user-page .menu-name {
   font-family: var(--font-display) !important;
   font-style: italic !important;
@@ -72,9 +62,7 @@
   height: auto !important;
 }
 
-/* ══════════════════════════════════════
-   SETTINGS FORM
-══════════════════════════════════════ */
+/* SETTINGS FORM */
 .user-page .settings {
   width: 100%;
   display: flex;
@@ -82,31 +70,31 @@
   gap: 24px;
 }
 
-/* Image upload row */
 .user-page .settings .member-media-frame {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 24px;
+  gap: 20px;
   padding: 20px;
   background: var(--clr-white);
-  border: 1px solid var(--clr-rule);
+  border: 0.5px solid var(--clr-rule);
   margin: 0;
+  border-radius: 0;
 }
 
 .user-page .settings .member-media-frame .mb-image {
-  width: 80px;
-  height: 80px;
+  width: 72px;
+  height: 72px;
   border-radius: 50%;
   object-fit: cover;
-  border: 2px solid var(--clr-rule);
+  border: 0.5px solid var(--clr-rule);
   flex-shrink: 0;
 }
 
 .user-page .settings .media-change-box {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 3px;
   margin-left: 0;
 }
 
@@ -114,16 +102,15 @@
   font-family: var(--font-body);
   font-size: 13px;
   font-weight: 500;
-  letter-spacing: 0.3px;
   color: var(--clr-ink);
 }
 
 .user-page .settings .media-change-box p {
   font-family: var(--font-body);
   font-size: 11px;
+  letter-spacing: 0.4px;
   color: var(--clr-muted);
-  margin: 0 0 10px;
-  letter-spacing: 0.5px;
+  margin: 0 0 8px;
 }
 
 .user-page .settings .up-del-box {
@@ -152,7 +139,6 @@
   font-size: 18px;
 }
 
-/* Input rows */
 .user-page .settings .input-frame {
   width: 100%;
   display: flex;
@@ -174,7 +160,6 @@
   gap: 6px;
 }
 
-/* Labels */
 .user-page .settings .spec-label {
   font-family: var(--font-body);
   font-size: 9px;
@@ -184,12 +169,11 @@
   color: var(--clr-muted);
 }
 
-/* Text inputs */
 .user-page .settings .spec-input {
   width: 100%;
   height: 48px;
   padding: 0 16px;
-  border: 1px solid var(--clr-rule);
+  border: 0.5px solid var(--clr-rule);
   border-radius: 0;
   background: var(--clr-white);
   box-shadow: none;
@@ -203,20 +187,14 @@
   margin-top: 0;
 }
 
-.user-page .settings .spec-input:focus {
-  border-color: var(--clr-ink);
-}
+.user-page .settings .spec-input:focus { border-color: var(--clr-ink); }
+.user-page .settings .spec-input::placeholder { color: var(--clr-muted); }
 
-.user-page .settings .spec-input::placeholder {
-  color: var(--clr-muted);
-}
-
-/* Textarea */
 .user-page .settings .spec-textarea {
   width: 100%;
-  height: 160px;
-  padding: 16px;
-  border: 1px solid var(--clr-rule);
+  height: 148px;
+  padding: 14px 16px;
+  border: 0.5px solid var(--clr-rule);
   border-radius: 0;
   background: var(--clr-white);
   box-shadow: none;
@@ -231,15 +209,9 @@
   margin-top: 0;
 }
 
-.user-page .settings .spec-textarea:focus {
-  border-color: var(--clr-ink);
-}
+.user-page .settings .spec-textarea:focus { border-color: var(--clr-ink); }
+.user-page .settings .spec-textarea::placeholder { color: var(--clr-muted); }
 
-.user-page .settings .spec-textarea::placeholder {
-  color: var(--clr-muted);
-}
-
-/* Save button row */
 .user-page .settings .save-box {
   display: flex;
   justify-content: flex-end;
@@ -265,108 +237,115 @@
   background: var(--clr-gold-dark) !important;
 }
 
-/* ══════════════════════════════════════
-   RIGHT PROFILE CARD
-══════════════════════════════════════ */
+/* RIGHT PROFILE CARD */
 .user-page .order-info-box {
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding: 40px 24px 32px;
+  align-items: stretch;
+  padding: 0;
   background: var(--clr-white);
-  border: 1px solid var(--clr-rule);
+  border: 0.5px solid var(--clr-rule);
   border-radius: 0;
   box-shadow: none;
-  gap: 0;
+  overflow: hidden;
 }
 
-/* Avatar */
+/* Dark top header */
+.user-page .order-info-box > .MuiBox-root:first-child {
+  background: var(--clr-gold);
+  padding: 40px 24px 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .user-page .order-info-box .order-user-img {
-  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .user-page .order-info-box .order-user-img .order-user-avatar {
-  width: 120px;
-  height: 120px;
+  width: 96px;
+  height: 96px;
   border-radius: 50%;
   object-fit: cover;
-  border: 3px solid var(--clr-rule);
+  border: 3px solid rgba(200,185,154,0.4);
   filter: none;
 }
 
-/* Name */
-.user-page .order-info-box .order-user-name {
+.user-page .order-info-box .order-user-img::after {
+  content: "";
+  display: block;
+  width: 32px;
+  height: 1px;
+  background: rgba(200,185,154,0.35);
   margin-top: 20px;
+}
+
+.user-page .order-info-box .order-user-name {
+  margin-top: 16px;
   font-family: var(--font-display);
   font-style: italic;
   font-weight: 600;
-  font-size: 28px;
+  font-size: 26px;
   line-height: 1.1;
   color: var(--clr-ink);
   text-align: center;
 }
 
-/* Role / address */
 .user-page .order-info-box .order-user-prof {
   margin-top: 4px;
   font-family: var(--font-body);
-  font-size: 10px;
+  font-size: 9px;
   font-weight: 500;
   letter-spacing: 2.5px;
   text-transform: uppercase;
-  color: var(--clr-muted);
+  color: var(--clr-ink);
   text-align: center;
+  line-height: 1.8;
 }
 
-/* Divider rule */
-.user-page .order-info-box::after {
-  content: "";
-  display: block;
-  width: 40px;
-  height: 1px;
-  background: var(--clr-gold);
-  margin: 20px auto 0;
-}
-
-/* Social icons */
+/* Social icons — in dark header */
 .user-page .order-info-box .user-media-box {
   display: flex;
   flex-direction: row;
   gap: 16px;
-  margin-top: 20px;
+  margin-top: 16px;
+  width: auto;
+  justify-content: center;
+}
+
+.user-page .order-info-box .user-media-box a {
+  display: flex;
+  color: var(--clr-muted);
+  transition: color 0.2s;
+}
+
+.user-page .order-info-box .user-media-box a:hover {
+  color: var(--clr-white);
 }
 
 .user-page .order-info-box .user-media-box svg {
   font-size: 18px;
-  color: var(--clr-muted);
-  cursor: pointer;
-  transition: color 0.2s;
 }
 
-.user-page .order-info-box .user-media-box svg:hover {
-  color: var(--clr-ink);
-}
-
-/* Description */
+/* Description — white area below header */
 .user-page .order-info-box .user-desc {
-  margin-top: 20px;
-  width: 100%;
+  margin: 0;
+  padding: 24px;
   font-family: var(--font-body);
   font-size: 13px;
   font-weight: 300;
   line-height: 1.8;
-  color: var(--clr-ink-soft);
+  color: var(--clr-ink);
   text-align: center;
+  border-top: 0.5px solid var(--clr-rule);
   word-break: break-word;
 }
 
-/* ══════════════════════════════════════
-   RESPONSIVE
-══════════════════════════════════════ */
+/* RESPONSIVE */
 @media (max-width: 900px) {
   .user-page .my-page-frame {
     flex-direction: column-reverse;
@@ -379,17 +358,18 @@
     position: static;
   }
 
-  .user-page .order-info-box {
+  .user-page .order-info-box > .MuiBox-root:first-child {
     flex-direction: row;
     align-items: center;
-    gap: 24px;
+    gap: 20px;
     padding: 24px;
-    text-align: left;
   }
 
+  .user-page .order-info-box .order-user-img::after { display: none; }
+
   .user-page .order-info-box .order-user-img .order-user-avatar {
-    width: 80px;
-    height: 80px;
+    width: 72px !important;
+    height: 72px !important;
   }
 
   .user-page .order-info-box .order-user-name {
@@ -398,18 +378,10 @@
     text-align: left;
   }
 
-  .user-page .order-info-box .order-user-prof,
-  .user-page .order-info-box .user-desc {
-    text-align: left;
-  }
-
-  .user-page .order-info-box::after {
-    display: none;
-  }
-
-  .user-page .menu-name {
-    font-size: 36px !important;
-  }
+  .user-page .order-info-box .order-user-prof { text-align: left; }
+  .user-page .order-info-box .user-media-box { justify-content: flex-start; margin-top: 8px; }
+  .user-page .order-info-box .user-desc { text-align: left; }
+  .user-page .menu-name { font-size: 36px !important; }
 }
 
 @media (max-width: 600px) {

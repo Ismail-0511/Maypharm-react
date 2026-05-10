@@ -2,7 +2,7 @@
    CSS VARIABLES
 ══════════════════════════════════════ */
 .products-page {
-  --clr-bg:        #fafaf8;
+  --clr-bg:        #eaeaea;
   --clr-white:     #ffffff;
   --clr-ink:       #1a1a18;
   --clr-ink-soft:  #5a5650;
@@ -22,7 +22,9 @@
 .products-page {
   width: 100%;
   min-height: 100vh;
-  background: var(--clr-bg);
+  background: rgba(255, 255, 255, 0.767);
+  background-size: 100%; 
+
   font-family: var(--font-body);
 }
 
@@ -30,7 +32,8 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  background: transparent;
+  background: rgba(255, 255, 255, 0.767);
+
 }
 
 /* ══════════════════════════════════════
@@ -122,7 +125,7 @@
 /* ══════════════════════════════════════
    ORDER FILTER BUTTONS (New / Price / Views)
 ══════════════════════════════════════ */
-.products-page .products .dishes-filter-section {
+.products-page .products .products-filter-section {
   margin-top: 48px;
   width: 100%;
   padding: 0 24px;
@@ -134,13 +137,13 @@
   padding-bottom: 16px;
 }
 
-.products-page .products .dishes-filter-box {
+.products-page .products .products-filter-box {
   display: flex;
   flex-direction: row;
   gap: 4px;
 }
 
-.products-page .products .dishes-filter-box .order {
+.products-page .products .products-filter-box .order {
   min-width: 72px !important;
   height: 32px !important;
   border-radius: 0 !important;
@@ -153,66 +156,54 @@
   transition: all 0.2s !important;
 }
 
-.products-page .products .dishes-filter-box .order.MuiButton-containedPrimary {
+.products-page .products .products-filter-box .order.MuiButton-containedPrimary {
   background: var(--clr-ink) !important;
   color: var(--clr-white) !important;
 }
 
-.products-page .products .dishes-filter-box .order.MuiButton-containedSecondary {
+.products-page .products .products-filter-box .order.MuiButton-containedSecondary {
   background: transparent !important;
   color: var(--clr-muted) !important;
   border: 1px solid var(--clr-rule) !important;
 }
 
-.products-page .products .dishes-filter-box .order.MuiButton-containedSecondary:hover {
+.products-page .products .products-filter-box .order.MuiButton-containedSecondary:hover {
   background: var(--clr-hover-bg) !important;
   color: var(--clr-ink) !important;
 }
 
 /* ══════════════════════════════════════
-   CATEGORY SIDEBAR + PRODUCT GRID LAYOUT
+   CATEGORY BAR + PRODUCT GRID LAYOUT
 ══════════════════════════════════════ */
 .products-page .products .list-category-section {
   width: 100%;
   min-height: 600px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: flex-start;
   padding: 0 24px;
   box-sizing: border-box;
 }
 
-/* ── Sidebar: fixed narrow strip, buttons rotated vertically ── */
+/* ── Horizontal pill category bar ── */
 .products-page .products .product-category {
-  flex-shrink: 0;
-  width: 32px;
-  /* tall enough to contain the rotated button strip */
-  min-height: 400px;
-  position: relative;
-  margin-top: 48px;
+  width: 100%;
+  margin-top: 32px;
+  margin-bottom: 24px;
 }
 
 .products-page .product-category .category-main {
-  /* Stack buttons horizontally, then rotate the whole group -90deg
-     so they read bottom-to-top along the left edge */
   display: flex;
   flex-direction: row;
-  gap: 2px;
-  white-space: nowrap;
-
-  position: absolute;
-  /* after rotation the left edge of the group becomes the top,
-     so we anchor top-left and shift down by the group's own width */
-  top: 0;
-  left: 0;
-  transform-origin: top left;
-  transform: rotate(-90deg) translateX(-100%);
+  flex-wrap: wrap;
+  gap: 8px;
+  white-space: normal;
 }
 
 .products-page .product-category .category-main button {
   min-width: auto !important;
-  height: 28px !important;
-  border-radius: 0 !important;
+  height: 30px !important;
+  border-radius: 100px !important;
   font-family: var(--font-body) !important;
   font-size: 9px !important;
   font-weight: 500 !important;
@@ -220,7 +211,7 @@
   white-space: nowrap !important;
   text-transform: uppercase !important;
   box-shadow: none !important;
-  padding: 0 14px !important;
+  padding: 0 16px !important;
   transition: all 0.2s !important;
 }
 
@@ -244,15 +235,13 @@
    PRODUCT GRID
 ══════════════════════════════════════ */
 .products-page .products .product-wrapper {
-  flex: 1;
+  width: 100%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   gap: 2px;
-  padding-top: 48px;
   padding-bottom: 48px;
   align-content: flex-start;
-  margin-left: 16px;
 }
 
 .products-page .products .product-wrapper .no-data {
@@ -376,30 +365,44 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 14px 16px 18px;
+  padding: 12px 14px 16px;
   box-sizing: border-box;
-  border-top: 1px solid var(--clr-rule);
-  gap: 4px;
+  border-top: 0.5px solid var(--clr-rule);
+  gap: 3px;
+  background: var(--clr-white);
+}
+
+.products-page .products .product-desc .product-collection {
+  font-family: var(--font-body);
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--clr-muted);
 }
 
 .products-page .products .product-desc .product-title {
-  font-family: var(--font-display);
-  font-weight: 600;
-  font-size: 17px;
-  line-height: 1.2;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.3;
   color: var(--clr-ink);
 }
 
-.products-page .products .product-desc .product-desc {
+/* price pill inside image */
+.products-page .products .product-card .price-pill {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  z-index: 3;
+  background: #1a1a18;
+  color: #ffffff;
   font-family: var(--font-body);
+  font-size: 11px;
   font-weight: 500;
-  font-size: 13px;
-  color: var(--clr-gold-dark);
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 3px;
-  margin-top: 2px;
+  letter-spacing: 0.5px;
+  padding: 4px 12px;
+  border-radius: 100px;
 }
 
 /* ══════════════════════════════════════
@@ -430,7 +433,7 @@
 .products-page .brands-logo {
   width: 100%;
   padding: 80px 0 88px;
-  background: rgb(231, 231, 231);
+  background: rgba(255, 255, 255, 0.767);
   display: flex;
   box-sizing: border-box;
 }
@@ -447,7 +450,7 @@
   font-style: italic;
   font-weight: 400;
   font-size: 42px;
-  color: var(--clr-ink);
+  color: var(--clr-black);
   letter-spacing: -0.3px;
 }
 
@@ -456,31 +459,31 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  gap: 2px;
+  gap: 12px;
   flex-wrap: wrap;
   margin-top: 48px;
 }
 
 .products-page .brands-logo .review-box {
-  width: 180px;
-  height: 180px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(45, 45, 45, 0.04);
-  border: 1px solid rgba(248, 248, 248, 0.2);
+  padding: 12px 32px;
+  background: transparent;
+  border: 1px solid var(--clr-rule);
+  border-radius: 100px;
   font-family: var(--font-body);
-  font-size: 18px;
+  font-size: 13px;
   font-weight: 500;
-  color: var(--clr-black);
-  letter-spacing: 5px;
-  transition: background 0.3s, border-color 0.3s, transform 0.3s var(--ease-out);
+  color: var(--clr-ink);
+  letter-spacing: 3px;
+  transition: background 0.2s, border-color 0.2s, transform 0.2s var(--ease-out);
 }
 
 .products-page .brands-logo .review-box:hover {
-  transform: translateY(-4px);
-  background: rgba(200, 185, 154, 0.08);
-  border-color: rgba(200, 185, 154, 0.5);
+  transform: translateY(-3px);
+  background: var(--clr-hover-bg);
+  border-color: var(--clr-ink);
 }
 
 /* ══════════════════════════════════════
@@ -489,7 +492,10 @@
 .products-page .address {
   width: 100%;
   padding: 80px 0 100px;
-  background: var(--clr-bg);
+  background: url("/public/img/maypharm.jpg") no-repeat;
+  background-size: 100%; 
+  background-position: right center; 
+  background-color: #f4f4f4; 
 }
 
 .products-page .address .address-area {
@@ -503,7 +509,7 @@
   font-style: italic;
   font-weight: 400;
   font-size: 42px;
-  color: var(--clr-ink);
+  color: var(--clr-black);
   letter-spacing: -0.3px;
 }
 

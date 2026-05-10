@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import About from "./About";
-import Statistics from "./Statistics";
 import PopularProducts from './PopularProducts';
 import ActiveUsers from "./ActiveUsers";
 import Events from "./Events";
